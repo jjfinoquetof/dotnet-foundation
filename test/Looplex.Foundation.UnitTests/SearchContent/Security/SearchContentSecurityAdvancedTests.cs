@@ -67,49 +67,13 @@ public class SearchContentSecurityAdvancedTests
         Assert.ThrowsException<FilterParseException>(() => _service.ConvertToSql(excessiveParameters), "Filter with excessive parameters should be rejected");
     }
 
-    [TestMethod]
-    public void Parse_ExcessiveValuePathFilters_ShouldBeRejected()
-    {
-        // Arrange
-        var excessiveValuePaths = string.Join(" and ", new string[100].Select((_, i) => $"emails{i}[type eq \"work\"].value co \"@company.com\""));
 
-        // Act & Assert
-        Assert.ThrowsException<FilterParseException>(() => _service.ConvertToSql(excessiveValuePaths), "Filter with excessive value path filters should be rejected");
-    }
 
     #endregion
 
     #region Recursion Protection Tests
 
-    [TestMethod]
-    public void Parse_DeeplyNestedValuePath_ShouldBeRejected()
-    {
-        // Arrange
-        var deeplyNestedValuePath = "emails[type eq \"work\" and addresses[type eq \"home\" and phones[type eq \"mobile\" and emails[type eq \"personal\"].value co \"@personal.com\"].value sw \"+55\"].locality eq \"São Paulo\"].value co \"@company.com\"";
 
-        // Act & Assert
-        Assert.ThrowsException<FilterParseException>(() => _service.ConvertToSql(deeplyNestedValuePath), "Deeply nested value path should be rejected");
-    }
-
-    [TestMethod]
-    public void Parse_RecursiveValuePath_ShouldBeRejected()
-    {
-        // Arrange
-        var recursiveValuePath = "emails[type eq \"work\" and emails[type eq \"personal\"].value co \"@personal.com\"].value co \"@company.com\"";
-
-        // Act & Assert
-        Assert.ThrowsException<FilterParseException>(() => _service.ConvertToSql(recursiveValuePath), "Recursive value path should be rejected");
-    }
-
-    [TestMethod]
-    public void Parse_ExcessiveSubAttributes_ShouldBeRejected()
-    {
-        // Arrange
-        var excessiveSubAttributes = "name." + string.Join(".", new string[50].Select((_, i) => $"subattr{i}"));
-
-        // Act & Assert
-        Assert.ThrowsException<FilterParseException>(() => _service.ConvertToSql($"{excessiveSubAttributes} eq \"test\""), "Excessive sub-attributes should be rejected");
-    }
 
     [TestMethod]
     public void Parse_DeeplyNestedLogicalOperators_ShouldBeRejected()

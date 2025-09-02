@@ -394,8 +394,9 @@ public class SqlPredicateGenerator : ISqlPredicateGenerator, IAstVisitor<string>
                 SqlDialect.SqlServer => $"LOWER({fieldName}) = LOWER(@{parameterName})",
                 SqlDialect.PostgreSql => $"LOWER({fieldName}) = LOWER(@{parameterName})",
                 SqlDialect.MySql => $"LOWER({fieldName}) = LOWER(@{parameterName})",
+                SqlDialect.SQLite => $"LOWER({fieldName}) = LOWER(@{parameterName})",
                 SqlDialect.Oracle => $"LOWER({fieldName}) = LOWER(@{parameterName})",
-                _ => $"LOWER({fieldName}) = LOWER(@{parameterName})"
+                _ => $"{fieldName} = @{parameterName}"
             };
         }
         
@@ -411,8 +412,9 @@ public class SqlPredicateGenerator : ISqlPredicateGenerator, IAstVisitor<string>
                 SqlDialect.SqlServer => $"LOWER({fieldName}) != LOWER(@{parameterName})",
                 SqlDialect.PostgreSql => $"LOWER({fieldName}) != LOWER(@{parameterName})",
                 SqlDialect.MySql => $"LOWER({fieldName}) != LOWER(@{parameterName})",
+                SqlDialect.SQLite => $"LOWER({fieldName}) != LOWER(@{parameterName})",
                 SqlDialect.Oracle => $"LOWER({fieldName}) != LOWER(@{parameterName})",
-                _ => $"LOWER({fieldName}) != LOWER(@{parameterName})"
+                _ => $"{fieldName} != @{parameterName}"
             };
         }
         
@@ -434,7 +436,9 @@ public class SqlPredicateGenerator : ISqlPredicateGenerator, IAstVisitor<string>
                 SqlDialect.SqlServer => $"LOWER({fieldName}) LIKE LOWER(@{parameterName})",
                 SqlDialect.PostgreSql => $"LOWER({fieldName}) LIKE LOWER(@{parameterName})",
                 SqlDialect.MySql => $"LOWER({fieldName}) LIKE LOWER(@{parameterName})",
+                SqlDialect.SQLite => $"LOWER({fieldName}) LIKE LOWER(@{parameterName})",
                 SqlDialect.Oracle => $"LOWER({fieldName}) LIKE LOWER(@{parameterName})",
+                SqlDialect.Standard => $"LOWER({fieldName}) LIKE LOWER(@{parameterName})",
                 _ => $"LOWER({fieldName}) LIKE LOWER(@{parameterName})"
             };
         }
@@ -457,7 +461,9 @@ public class SqlPredicateGenerator : ISqlPredicateGenerator, IAstVisitor<string>
                 SqlDialect.SqlServer => $"LOWER({fieldName}) LIKE LOWER(@{parameterName})",
                 SqlDialect.PostgreSql => $"LOWER({fieldName}) LIKE LOWER(@{parameterName})",
                 SqlDialect.MySql => $"LOWER({fieldName}) LIKE LOWER(@{parameterName})",
+                SqlDialect.SQLite => $"LOWER({fieldName}) LIKE LOWER(@{parameterName})",
                 SqlDialect.Oracle => $"LOWER({fieldName}) LIKE LOWER(@{parameterName})",
+                SqlDialect.Standard => $"LOWER({fieldName}) LIKE LOWER(@{parameterName})",
                 _ => $"LOWER({fieldName}) LIKE LOWER(@{parameterName})"
             };
         }
@@ -480,7 +486,9 @@ public class SqlPredicateGenerator : ISqlPredicateGenerator, IAstVisitor<string>
                 SqlDialect.SqlServer => $"LOWER({fieldName}) LIKE LOWER(@{parameterName})",
                 SqlDialect.PostgreSql => $"LOWER({fieldName}) LIKE LOWER(@{parameterName})",
                 SqlDialect.MySql => $"LOWER({fieldName}) LIKE LOWER(@{parameterName})",
+                SqlDialect.SQLite => $"LOWER({fieldName}) LIKE LOWER(@{parameterName})",
                 SqlDialect.Oracle => $"LOWER({fieldName}) LIKE LOWER(@{parameterName})",
+                SqlDialect.Standard => $"LOWER({fieldName}) LIKE LOWER(@{parameterName})",
                 _ => $"LOWER({fieldName}) LIKE LOWER(@{parameterName})"
             };
         }
