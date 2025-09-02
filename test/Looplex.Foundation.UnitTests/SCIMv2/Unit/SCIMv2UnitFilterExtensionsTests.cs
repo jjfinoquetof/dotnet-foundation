@@ -6,7 +6,7 @@ using System.Collections.Concurrent;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Looplex.Foundation.SCIMv2.Queries;
 
-namespace Looplex.Foundation.UnitTests.SCIMv2.Queries
+namespace Looplex.Foundation.UnitTests.SCIMv2.Unit
 {
     /// <summary>
     /// Comprehensive unit tests for FilterExtensions to ensure backward compatibility, 
@@ -21,7 +21,7 @@ namespace Looplex.Foundation.UnitTests.SCIMv2.Queries
     /// - Edge cases and error handling
     /// </summary>
     [TestClass]
-    public class FilterExtensionsTests
+    public class SCIMv2UnitFilterExtensionsTests
     {
         #region Basic Functionality Tests
 

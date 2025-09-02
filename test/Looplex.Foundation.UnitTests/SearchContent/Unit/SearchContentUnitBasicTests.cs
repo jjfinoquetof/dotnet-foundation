@@ -1,13 +1,13 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Looplex.Foundation.SearchContent;
 
-namespace Looplex.Foundation.UnitTests.SearchContent;
+namespace Looplex.Foundation.UnitTests.SearchContent.Unit;
 
 /// <summary>
 /// Basic tests to verify the enhanced SCIM filter parser implementation
 /// </summary>
 [TestClass]
-public class BasicTests
+public class SearchContentUnitBasicTests
 {
     private ISearchContentService _service = null!;
 

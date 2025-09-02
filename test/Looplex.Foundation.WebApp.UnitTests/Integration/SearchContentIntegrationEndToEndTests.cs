@@ -17,14 +17,14 @@ using Microsoft.Extensions.Hosting;
 
 using NSubstitute;
 
-namespace Looplex.Foundation.WebApp.UnitTests.Middlewares;
+namespace Looplex.Foundation.WebApp.UnitTests.Integration;
 
 /// <summary>
 /// Integration tests for SCIM v2 middleware with SearchContent functionality
 /// Tests the integration between SCIM filter processing and SQL generation
 /// </summary>
 [TestClass]
-public class SCIMv2SearchContentIntegrationTests
+public class SearchContentIntegrationEndToEndTests
 {
   private HttpClient _client = null!;
   private IHost _host = null!;

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Concurrent;
 
-namespace Looplex.Foundation.UnitTests.SearchContent;
+namespace Looplex.Foundation.UnitTests.SearchContent.Security;
 
 /// <summary>
 /// Comprehensive security-focused tests for SCIM filter parser
@@ -25,7 +25,7 @@ namespace Looplex.Foundation.UnitTests.SearchContent;
 /// - Encoding and character set attacks
 /// </summary>
 [TestClass]
-public class SecurityTests
+public class SearchContentSecurityTests
 {
     private ISearchContentService _service = null!;
 

@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Looplex.Foundation.UnitTests.SearchContent;
+namespace Looplex.Foundation.UnitTests.SearchContent.Unit;
 
 /// <summary>
 /// Comprehensive tests for complex SCIM filter scenarios
@@ -18,7 +18,7 @@ namespace Looplex.Foundation.UnitTests.SearchContent;
 /// - Complex NOT with nested parentheses
 /// </summary>
 [TestClass]
-public class ComplexScenariosTests
+public class SearchContentUnitComplexTests
 {
     private ISearchContentService _service = null!;
 

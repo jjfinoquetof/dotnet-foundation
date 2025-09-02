@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Collections.Concurrent;
 using System.Diagnostics;
 
-namespace Looplex.Foundation.UnitTests.SearchContent;
+namespace Looplex.Foundation.UnitTests.SearchContent.Performance;
 
 /// <summary>
 /// Performance and robustness tests for SCIM filter parser
@@ -24,7 +24,7 @@ namespace Looplex.Foundation.UnitTests.SearchContent;
 /// - Error recovery under load
 /// </summary>
 [TestClass]
-public class PerformanceAndRobustnessTests
+public class SearchContentPerformanceTests
 {
     private ISearchContentService _service = null!;
 
